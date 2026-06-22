@@ -21,7 +21,6 @@ export function Header() {
           <a href={href} key={href} onClick={() => setOpen(false)}>{label}</a>
         ))}
       </div>
-      <a className="btn" href="#map">Explore safety map <span>↗</span></a>
       <button className="mobile-toggle" onClick={() => setOpen(!open)} aria-label="Toggle menu">☰</button>
     </nav>
   );

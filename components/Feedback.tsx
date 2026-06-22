@@ -1,7 +1,16 @@
-const quotes = [
-  {initial:"Д",name:"Dilnoza, 22",city:"Tashkent",text:"I often text my sister the whole way home. A route that explains why it is safer—not only faster—would give both of us peace of mind."},
-  {initial:"Ш",name:"Shahnoza, 29",city:"Samarkand",text:"The motherhood filters are what caught my attention. Finding a changing station in a new part of the city should not feel like detective work."},
-  {initial:"А",name:"Aziza, 20",city:"Fergana",text:"I would use the community map before events and late classes. Recent reports from other women feel much more useful than generic ratings."},
+const feedback = [
+  ["Dilnoza, 22 · Tashkent", "I want a route that explains why it is safer, not only faster."],
+  ["Shahnoza, 29 · Samarkand", "Finding a changing station should not feel like detective work."],
+  ["Aziza, 20 · Fergana", "Recent reports from other women feel more useful than generic ratings."],
+  ["Madina, 24 · Tashkent", "I would share my evening route with my sister every time."],
+  ["Zilola, 31 · Bukhara", "An Umida point nearby would make unfamiliar streets feel less isolating."],
+  ["Nodira, 27 · Namangan", "I need to know which entrance actually has a ramp."],
+  ["Farida, 19 · Andijan", "A broken streetlight report can change which way I walk home."],
+  ["Malika, 35 · Nukus", "Family filters would save so much time when I am out with my baby."],
+  ["Sevara, 23 · Tashkent", "Hefi should warn me before I get onto a bus with repeated reports."],
+  ["Gulnoza, 42 · Qarshi", "One place for pharmacies, hospitals, and safe stops makes sense."],
 ];
 
-export function Feedback(){return <section className="feedback"><div className="shell"><div className="section-head"><div><span className="eyebrow"><i/> Early voices</span><h2>What women want<br/>from HEARTH.</h2></div><p>Feedback from potential users in Uzbekistan who reviewed the HEARTH concept.</p></div><div className="quotes">{quotes.map(q=><article className="quote" key={q.name}><div><div className="stars">★★★★★</div><blockquote>“{q.text}”</blockquote></div><div className="quote-user"><span className="avatar">{q.initial}</span><div><b>{q.name}</b><small>{q.city}</small></div></div></article>)}</div></div></section>}
+function Quote({name,text}:{name:string;text:string}){return <article className="ticker-quote"><span>♥</span><blockquote>“{text}”</blockquote><small>{name}</small></article>}
+
+export function Feedback(){return <section className="feedback"><div className="shell"><div className="section-head"><div><span className="eyebrow"><i/> Interview voices</span><h2>Feedback from people we interviewed across Uzbekistan.</h2></div></div></div><div className="feedback-ticker"><div className="ticker-track">{feedback.map(([name,text])=><Quote name={name} text={text} key={name}/>) }{feedback.map(([name,text])=><Quote name={name} text={text} key={`${name}-copy`}/>)}</div></div></section>}
