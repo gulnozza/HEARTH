@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assets";
 
 const mapLabels = [
   ["Nukus", "93", "13%", "47%"],
@@ -25,7 +26,7 @@ export function Hero() {
         <div className="hero-art map-hero-art" aria-label="Illustrative Uzbekistan regional safety map">
           <div className="map-title-chip"><b>Uzbekistan safety overview</b><small>Regional confidence model</small></div>
           <div className="uzbekistan-hero-map">
-            <Image src="/uzbekistan-safety-map-v3.png" alt="Uzbekistan regions colored from red to green by illustrative safety score" width={1200} height={690} priority />
+            <Image src={assetPath("/uzbekistan-safety-map-v3.png")} alt="Uzbekistan regions colored from red to green by illustrative safety score" width={1200} height={690} priority />
             {mapLabels.map(([city, score, left, top]) => <span className="hero-map-label" style={{left,top}} key={city}><b>{city}</b><small>{score}</small></span>)}
           </div>
           <div className="safety-scale"><div className="scale-bar"/><div className="scale-numbers"><span><b>0</b> Less safe</span><span><b>50</b> Moderate</span><span><b>100</b> Safer</span></div></div>

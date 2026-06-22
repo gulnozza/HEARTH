@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import Image from "next/image";
+import { assetPath } from "@/lib/assets";
 
 type Message={text:string;user?:boolean};
 const opening:Message={text:"Salom! I'm Hefi. I can help you find a safer route, a trusted place, or the right next step. What do you need?"};
@@ -12,6 +13,6 @@ export function Chatbot(){
   function send(q:string){if(!q.trim())return;setMessages(current=>[...current,{text:q,user:true},{text:answer(q)}]);setInput("")}
   function submit(e:FormEvent){e.preventDefault();send(input)}
   return <section className="chatbot" id="chatbot"><div className="shell chat-wrap"><div className="chat-copy"><span className="eyebrow"><i/> Meet Hefi</span><h2>Know more.<br/>Worry less.</h2><p>Ask about safer routes, emergency resources, trusted locations, or what to do in an uncomfortable situation. Hefi is the platform&apos;s AI safety assistant; Umida points are real local places marked with stickers where people can ask for help.</p><div className="suggestions">{["Find a 24/7 pharmacy","Find an Umida help point","I feel unsafe"].map(q=><button onClick={()=>send(q)} key={q}>{q}</button>)}</div></div>
-    <div className="chat-window"><div className="chat-header"><span className="bot-avatar"><Image src="/hearth-mascot-head.png" alt="" width={45} height={42}/></span><div><b>Hefi · HEARTH AI</b><small>Online now</small></div></div><div className="chat-messages">{messages.map((m,i)=><div className={`bubble-msg ${m.user?"user":""}`} key={i}>{m.text}</div>)}</div><form className="chat-input" onSubmit={submit}><input value={input} onChange={e=>setInput(e.target.value)} autoComplete="off" placeholder="Ask Hefi…" aria-label="Message Hefi"/><button aria-label="Send message">↑</button></form></div>
+    <div className="chat-window"><div className="chat-header"><span className="bot-avatar"><Image src={assetPath("/hearth-mascot-head.png")} alt="" width={45} height={42}/></span><div><b>Hefi · HEARTH AI</b><small>Online now</small></div></div><div className="chat-messages">{messages.map((m,i)=><div className={`bubble-msg ${m.user?"user":""}`} key={i}>{m.text}</div>)}</div><form className="chat-input" onSubmit={submit}><input value={input} onChange={e=>setInput(e.target.value)} autoComplete="off" placeholder="Ask Hefi…" aria-label="Message Hefi"/><button aria-label="Send message">↑</button></form></div>
   </div></section>
 }
