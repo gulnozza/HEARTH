@@ -1,29 +1,60 @@
-import GAngelHero from "@/components/landing/GAngelHero";
-import CommunityFeatures from "@/components/landing/CommunityFeatures";
-import LiveMapCommunity from "@/components/landing/LiveMapCommunity";
-import HowItWorksSteps from "@/components/landing/HowItWorksSteps";
-import HowItsUsed from "@/components/landing/HowItsUsed";
-import UnderTheHood from "@/components/landing/UnderTheHood";
-import AIIntelligenceShowcase from "@/components/landing/AIIntelligenceShowcase";
-import AIPatternDetection from "@/components/ai/AIPatternDetection";
-import PrivacyTrust from "@/components/landing/PrivacyTrust";
-import HearthScrollRunner from "@/components/HearthScrollRunner";
-
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className="relative">
-      <HearthScrollRunner />
-      <GAngelHero />
-      <CommunityFeatures />
-      <LiveMapCommunity />
-      <HowItWorksSteps />
-      <HowItsUsed />
-      <UnderTheHood />
-      <AIIntelligenceShowcase />
-      <div id="patterns">
-        <AIPatternDetection />
-      </div>
-      <PrivacyTrust />
-    </div>
+    <main className="hearthPage">
+      <nav className="topNav">
+        <div className="logoWrap">
+          <img src="/mascot.jpg" alt="Hearth mascot" />
+          <span>Hearth</span>
+        </div>
+
+        <div className="navCenter">
+          <a>Features</a>
+          <a>Safety Map</a>
+          <a>Community</a>
+          <a>About</a>
+        </div>
+      </nav>
+
+      <section className="hero">
+        <div className="giantWord">HEARTH</div>
+
+        <div className="heroLeft">
+          <div className="eyebrow">AI-powered safety intelligence</div>
+
+          <h1>Built for the way people move</h1>
+
+          <p>
+            Whether you're walking across town or exploring somewhere new,
+            Hearth helps you choose safer routes, discover trusted places, and
+            stay connected to people who care.
+          </p>
+
+          <div className="heroButtons">
+            <button>Explore Safety Map</button>
+            <button className="secondary">See How It Works</button>
+          </div>
+        </div>
+
+        <div className="heroRight">
+          <div className="softCircle" />
+
+          <div className="block mapBlock">
+            <div className="street s1" />
+            <div className="street s2" />
+            <div className="street s3" />
+            <div className="routeDash" />
+            <span className="pin p1" />
+            <span className="pin p2" />
+          </div>
+
+          <div className="bubble bubbleA">AI found a safer route nearby.</div>
+          <div className="bubble bubbleB">Community reports updated this area.</div>
+
+          <div className="safeRibbon">Safeguarding Together</div>
+
+          <img className="mascotFloat" src="/mascot.jpg" alt="" />
+        </div>
+      </section>
+    </main>
   );
 }
