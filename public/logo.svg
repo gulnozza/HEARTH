@@ -1,0 +1,16 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="40" height="40" rx="12" fill="url(#hearth-bg)"/>
+  <path d="M10 28V18C10 14 13 11 17 11H23C27 11 30 14 30 18V28" stroke="#003320" stroke-width="2" stroke-linecap="round"/>
+  <path d="M8 28H32" stroke="#003320" stroke-width="2" stroke-linecap="round"/>
+  <path d="M20 24C17 21 16 18 18 15C19 17 20 17 20 15C20 17 21 17 22 15C24 18 23 21 20 24Z" fill="url(#hearth-flame)"/>
+  <defs>
+    <linearGradient id="hearth-bg" x1="0" y1="0" x2="40" y2="40">
+      <stop stop-color="#F0AFFF"/>
+      <stop offset="1" stop-color="#F7A500"/>
+    </linearGradient>
+    <linearGradient id="hearth-flame" x1="20" y1="14" x2="20" y2="24">
+      <stop stop-color="#F7A500"/>
+      <stop offset="1" stop-color="#F0AFFF"/>
+    </linearGradient>
+  </defs>
+</svg>

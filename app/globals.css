@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --pink: #f0afff;
+  --orange: #f7a500;
+  --forest: #003320;
+  --forest-light: #004d33;
+  --background: #fafaf8;
+  --cream: #fff8ef;
+  --foreground: #003320;
+}
+
+@theme inline {
+  --color-pink: var(--pink);
+  --color-orange: var(--orange);
+  --color-forest: var(--forest);
+  --color-forest-light: var(--forest-light);
+  --color-background: var(--background);
+  --color-cream: var(--cream);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --radius-card: 24px;
+  --radius-card-lg: 32px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(240, 175, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(240, 175, 255, 0.6); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+.animate-float-delay { animation: float 6s ease-in-out 2s infinite; }
+.animate-fade-up { animation: fade-up 0.7s ease-out forwards; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+@keyframes mascot-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.animate-mascot-run {
+  animation: mascot-bob 0.35s ease-in-out infinite;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-dark {
+  background: rgba(0, 51, 32, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #003320 0%, #004d33 60%, #f7a500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-pink-orange {
+  background: linear-gradient(135deg, #f0afff 0%, #f7a500 100%);
+}
+
+.shadow-premium {
+  box-shadow: 0 8px 40px -8px rgba(0, 51, 32, 0.12);
+}
+
+.shadow-float {
+  box-shadow: 0 24px 64px -16px rgba(0, 51, 32, 0.18);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px -12px rgba(0, 51, 32, 0.16);
+}
